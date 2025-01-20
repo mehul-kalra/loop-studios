@@ -1,0 +1,31 @@
+ %font-alata {
+    font-family: "Alata", san-serif;
+    font-weight: 400;
+  }
+  
+   %font-josefin {
+    font-family: "Josefin Sans", san-serif;
+    font-weight: 300;
+  }
+  
+  %flex-space-between{
+      display: flex;
+      justify-content: space-between;
+  }
+  
+   %flex-center-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+   %flex-center-flexend{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+  }
+
+   %back-image{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
