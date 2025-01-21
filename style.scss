@@ -1,6 +1,5 @@
-@import './placeholders.scss';
-@import './variable.scss';
-
+@import "./placeholders.scss";
+@import "./variable.scss";
 
 * {
   margin: 0px;
@@ -8,7 +7,7 @@
 }
 
 .header {
-  height: 70vh;
+  height: auto;
   background-image: url(./images/desktop/image-hero.jpg);
   background-size: 100% 100%;
   padding: $padding;
@@ -25,7 +24,6 @@
         @extend %font-alata;
         color: $White;
         text-decoration: none;
-        
       }
       & a:hover {
         padding-bottom: 10px;
@@ -52,21 +50,31 @@
 .container1 {
   padding: 150px 150px;
   display: flex;
+
+  &_image {
+    max-width: 50%;
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+  }
   &_mobileimage {
     display: none;
   }
   &_textbox {
+    max-width: 50%;
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 70px 100px;
+    padding: 60px;
     flex-direction: column;
     gap: 30px;
     background-color: $White;
     position: relative;
     top: 180px;
     right: 150px;
-    
+
     &_heading {
       @extend %font-josefin;
       text-transform: uppercase;
@@ -119,11 +127,13 @@
     grid-template-columns: repeat(4, 1fr);
     // height: 1000px;
     padding: 100px 0px;
+    max-width: 100%;
 
     &_one {
-        height: 500px;
+        max-width: 100%;
+      height: 500px;
       background-image: url(./images/desktop/image-deep-earth.jpg);
-      @extend %back-image; 
+      @extend %back-image;
       @extend %flex-center-flexend;
       &_text {
         @extend %font-josefin;
@@ -140,6 +150,7 @@
       // filter: brightness(150%);
     }
     &_two {
+        max-width: 100%;
       background-image: url(./images/desktop/image-night-arcade.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -153,6 +164,7 @@
       opacity: 1;
     }
     &_three {
+        max-width: 100%;
       background-image: url(./images/desktop/image-soccer-team.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -166,6 +178,7 @@
       opacity: 1;
     }
     &_four {
+        max-width: 100%;
       background-image: url(./images/desktop/image-grid.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -179,7 +192,8 @@
       opacity: 1;
     }
     &_five {
-        height: 500px;
+        max-width: 100%;
+      height: 500px;
       background-image: url(./images/desktop/image-from-above.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -193,6 +207,7 @@
       opacity: 1;
     }
     &_six {
+        max-width: 100%;
       background-image: url(./images/desktop/image-pocket-borealis.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -206,6 +221,7 @@
       opacity: 1;
     }
     &_seven {
+        max-width: 100%;
       background-image: url(./images/desktop/image-curiosity.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -219,6 +235,7 @@
       opacity: 1;
     }
     &_eight {
+        max-width: 100%;
       background-image: url(./images/desktop/image-fisheye.jpg);
       @extend %back-image;
       @extend %flex-center-flexend;
@@ -241,32 +258,32 @@
   background-color: $Black;
   padding: 50px 200px;
   display: grid;
- grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  &_social_media{
+  &_social_media {
     display: flex;
     gap: 30px;
     justify-content: flex-end;
-    & svg:hover{
-        padding-bottom: 10px;
-        transition: 0.3s ease-in-out;
-        border-bottom: 3px solid $White;
+    & svg:hover {
+      padding-bottom: 10px;
+      transition: 0.3s ease-in-out;
+      border-bottom: 3px solid $White;
     }
   }
-  &_options{
+  &_options {
     display: flex;
     gap: 30px;
-    & a{
-        text-decoration: none;
-        color: $White;
-        @extend %font-josefin;
+    & a {
+      text-decoration: none;
+      color: $White;
+      @extend %font-josefin;
     }
-    & a:hover{
-        padding-bottom: 5px;
-        border-bottom: 3px solid $White;
+    & a:hover {
+      padding-bottom: 5px;
+      border-bottom: 3px solid $White;
     }
   }
-  &_text{
+  &_text {
     text-align: right;
     color: $Dark-Gray;
   }
@@ -299,12 +316,14 @@
     flex-direction: column;
     padding: 40px 90px;
     &_image {
+      max-width: 100%;
       & img {
-        max-width: 100%;
+        height: 100%;
         width: 100%;
       }
     }
     &_textbox {
+      max-width: 100%;
       top: 0;
       right: 0;
       padding: 40px 60px;
@@ -335,10 +354,10 @@
     &_cards {
       grid-template-columns: repeat(2, 1fr);
       padding: 80px 0px;
-      &_one{
+      &_one {
         height: auto;
       }
-      &_five{
+      &_five {
         height: auto;
       }
     }
@@ -420,6 +439,7 @@
       }
     }
     &_textbox {
+      max-width: 100%;
       padding: 20px 0px;
       text-align: center;
       gap: 20px;
@@ -553,21 +573,20 @@
   .footer {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    &_social_media {
+      justify-content: center;
+      order: 3;
+    }
+    &_options {
       flex-direction: column;
+      order: 2;
+    }
+    &_text {
       text-align: center;
-      padding: 30px 20px;
-      &_social_media{
-        justify-content: center;
-        order: 3;
-      }
-      &_options{
-        flex-direction: column;
-        order: 2;
-      }
-      &_text{
-        text-align: center;
-        order: 4;
-      }
-  
+      order: 4;
+    }
   }
 }
